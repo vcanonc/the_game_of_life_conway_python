@@ -203,7 +203,7 @@ def main():
                 break
 
             else:
-                print(" ⚠️ ERROR: Inserte una opción valida. ")
+                print("ERROR: Inserte una opción valida.")
 
 
 if __name__ == "__main__":
