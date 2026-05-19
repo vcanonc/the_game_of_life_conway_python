@@ -95,4 +95,5 @@ python main.py
 
 ## 👨‍💻 Author
 
-Developed as a Python implementation of Conway's Game of Life.
+Developed by:
+- [Víctor Camilo Cañón Castellanos](https://github.com/vcanonc)
