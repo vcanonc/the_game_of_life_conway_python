@@ -8,6 +8,15 @@ LIVE = 1
 DEAD = 0
 
 
+def get_symbols():
+    if os.name == "nt":
+        return "■ ", "□ "
+    return "🟨", "⬛"
+
+
+LIVE_CELL, DEAD_CELL = get_symbols()
+
+
 def count_living_neighbors(world, row, col):
     """
     Cuenta las células vivas vecinas alrededor de una posición dada.
@@ -151,8 +160,8 @@ def print_world(world):
     """
     Imprime el tablero del juego en consola.
 
-    Las células vivas se representan con el emoticón '🟨'
-    y las muertas con '⬛'.
+    Las células vivas se representan con el simbolo asignado
+    para cada caso.
 
     Args:
         world: Matriz bidimensional que representa el mundo del juego.
@@ -161,9 +170,9 @@ def print_world(world):
     for r in range(ROWS):
         for c in range(COLS):
             if is_alive(world, r, c):
-                print("🟨", end="")
+                print(LIVE_CELL, end="")
             else:
-                print("⬛", end="")
+                print(DEAD_CELL, end="")
         print()
 
 
@@ -175,7 +184,7 @@ def main():
     while flag:
         os.system("cls" if os.name == "nt" else "clear")
 
-        print(" ****** 🦠 EL JUEGO DE LA VIDA DE CONWAY 🧬 ******")
+        print(" ****** EL JUEGO DE LA VIDA DE CONWAY ******")
 
         print(f"\nGeneración {gen}")
         print_world(world)
